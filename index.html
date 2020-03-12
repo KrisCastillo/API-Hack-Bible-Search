@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang='en'>
+  <head>
+    <meta charset="utf-8">
+    <title>Bible Search</title>
+
+    <!-- Responsive viewport tag, tells small screens that it's responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="Bible Search" content="Look up for an specific passage in the Bible">
+
+    <!-- Normalize.css, a cross-browser reset file -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.css" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link href="main.css" rel="stylesheet">
+    
+    
+  </head>
+
+  <body class="basic basic_search">
+
+  <!--------- INTRODUCTION ------------->
+    <header class='banner-section'>
+      <p class='heading'>
+          Bible Search
+      </p>
+    </header>
+
+    <!--INTRODUCTION Page -->
+    <article id='intro-page' class='start-section'>
+
+        <div class='title-bg'>
+          <p> Are you looking for a specific verse in the Bible?</p>
+          <p>Here you can find what you are looking for by simply writing:</p>
+          <p>the book, the chapter and the verse,</p>
+          <p>and you will immediately get the desired result.</p>
+          <button class='start-button' id='showHiddenSection' onclick="tryIt()">Try it!</button>
+      </div>
+
+    </article>
+
+    <!-- Search section -->
+
+    <section id='search-page'>
+      <div class="subheader">
+        <div class="container flex">
+
+          <div class="subheadings">
+            <h2>Search results for:</h2>
+            <h3 id="viewing"></h3>
+          </div>
+          <div id="search-container" class="search-area flex">
+            <button id='search-button' onclick="searchButton()">🔎</button>
+            <input type="text" id="search-input" placeholder="ex. 'John 3:16-19'"
+              size="30" onkeydown = "if (event.keyCode == 13) searchButton()" >
+          </div>
+
+        </div><!-- .container.flex -->
+      </div><!-- .subheader -->
+
+      <main class="container">
+        <h4 id="select-prompt" class="list-heading"><span>&nbsp;</span></h4>
+
+          <div id="search-nav-top" class="search-nav search-nav-top"></div>
+          <div id="results-list" class="search-results-list list-container"></div>
+          <div id="search-nav-bottom" class="search-nav search-nav-bottom"></div>
+
+      </main>
+    </section>
+    
+    <script src="https://cdn.scripture.api.bible/fums/fumsv2.min.js"></script>
+    <script src='https://code.jquery.com/jquery-3.3.1.js' integrity='sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=' crossorigin='anonymous'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="my_key.js"></script>
+    <script src="app.js"></script>
+
+  </body>
+</html>
